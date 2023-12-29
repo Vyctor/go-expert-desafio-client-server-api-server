@@ -48,7 +48,6 @@ func quotationHandler(w http.ResponseWriter, r *http.Request) {
 func getQuotationFromApi() (*Quotation, error) {
 	ctx, cancel := context.WithTimeout(context.Background(), 200*time.Millisecond)
 	defer cancel()
-
 	req, err := http.NewRequestWithContext(ctx, http.MethodGet, apiURL, nil)
 	if err != nil {
 		return nil, fmt.Errorf("erro ao criar requisição: %w", err)
